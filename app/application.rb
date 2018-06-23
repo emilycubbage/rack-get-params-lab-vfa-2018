@@ -28,6 +28,7 @@ class Application
       add_item = req.params["q"]
       if @@items.include?(add_item)
         @@cart.push(add_item)
+        resp.write "#{add_item} added"
       else
         resp.write "Error: item does not exist"
       end
