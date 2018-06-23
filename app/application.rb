@@ -13,6 +13,7 @@ class Application
     elsif req.path.match(/cart/)
       @@cart.each do |cart|
         resp.write "#{cart}\n"
+      end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
