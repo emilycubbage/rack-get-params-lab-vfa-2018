@@ -19,7 +19,7 @@ class Application
     elsif req.path.match(/add/)
       add_item = req.params["q"]
       if @@items.include?(add_item)
-        
+        @@cart.push
     else
       resp.write "Path Not Found"
     end
