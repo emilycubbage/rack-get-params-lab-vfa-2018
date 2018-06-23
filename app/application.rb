@@ -19,7 +19,7 @@ class Application
         end
       end
       if cart_counter == 0
-        resp.write "The cart is empty"
+        resp.write "Your cart is empty"
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
