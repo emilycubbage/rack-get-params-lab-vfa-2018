@@ -19,7 +19,10 @@ class Application
     elsif req.path.match(/add/)
       add_item = req.params["q"]
       if @@items.include?(add_item)
-        @@cart.push
+        @@cart.push(add_item)
+      else
+        resp.write "Error: item does not exist"
+      end
     else
       resp.write "Path Not Found"
     end
